@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Sponsored Research Resource Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js">
+    </script>
+    <script src="script.js"></script>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        html,
+        body {
+            min-height: 100vh;
+        }
+
+        body {
+            background: hsl(0, 0%, 99%);
+            display: grid;
+            grid-template:
+                "search" minmax(30%, 30vh) "results" minmax(10%, auto) / 1fr;
+            margin: 30px;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        #search {
+            display: grid;
+            grid-area: search;
+            grid-template:
+                "search" 60px
+                / 420px;
+            justify-content: center;
+            align-content: center;
+            justify-items: stretch;
+            align-items: stretch;
+            background: hsl(0, 0%, 99%);
+        }
+
+        #search input {
+            display: block;
+            grid-area: search;
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 100%;
+            background: none;
+            padding: 0 30px 0 60px;
+            border: none;
+            border-radius: 100px;
+            font: 24px/1 system-ui, sans-serif;
+            outline-offset: -8px;
+        }
+
+
+        #search svg {
+            grid-area: search;
+            overflow: visible;
+            color: hsl(215, 100%, 50%);
+            fill: none;
+            stroke: currentColor;
+        }
+
+        .spark {
+            fill: currentColor;
+            stroke: none;
+            r: 15;
+        }
+
+        .spark:nth-child(1) {
+            animation:
+                spark-radius 2.03s 1s both,
+                spark-one-motion 2s 1s both;
+        }
+
+        @keyframes spark-radius {
+            0% {
+                r: 0;
+                animation-timing-function: cubic-bezier(0, 0.3, 0, 1.57)
+            }
+
+            30% {
+                r: 15;
+                animation-timing-function: cubic-bezier(1, -0.39, 0.68, 1.04)
+            }
+
+            95% {
+                r: 8
+            }
+
+            99% {
+                r: 10
+            }
+
+            99.99% {
+                r: 7
+            }
+
+            100% {
+                r: 0
+            }
+        }
+
+        @keyframes spark-one-motion {
+            0% {
+                transform: translate(-20%, 50%);
+                animation-timing-function: cubic-bezier(0.63, 0.88, 0, 1.25)
+            }
+
+            20% {
+                transform: rotate(-0deg) translate(0%, -50%);
+                animation-timing-function: ease-in
+            }
+
+            80% {
+                transform: rotate(-230deg) translateX(-20%) rotate(-100deg) translateX(15%);
+                animation-timing-function: linear
+            }
+
+            100% {
+                transform: rotate(-360deg) translate(30px, 100%);
+                animation-timing-function: cubic-bezier(.64, .66, 0, .51)
+            }
+        }
+
+        .spark:nth-child(2) {
+            animation:
+                spark-radius 2.03s 1s both,
+                spark-two-motion 2.03s 1s both;
+        }
+
+        @keyframes spark-two-motion {
+            0% {
+                transform: translate(120%, 50%) rotate(-70deg) translateY(0%);
+                animation-timing-function: cubic-bezier(0.36, 0.18, 0.94, 0.55)
+            }
+
+            20% {
+                transform: translate(90%, -80%) rotate(60deg) translateY(-80%);
+                animation-timing-function: cubic-bezier(0.16, 0.77, 1, 0.4)
+            }
+
+            40% {
+                transform: translate(110%, -50%) rotate(-30deg) translateY(-120%);
+                animation-timing-function: linear
+            }
+
+            70% {
+                transform: translate(100%, -50%) rotate(120deg) translateY(-100%);
+                animation-timing-function: linear
+            }
+
+            80% {
+                transform: translate(95%, 50%) rotate(80deg) translateY(-150%);
+                animation-timing-function: cubic-bezier(.64, .66, 0, .51)
+            }
+
+            100% {
+                transform: translate(100%, 50%) rotate(120deg) translateY(0%)
+            }
+        }
+
+        .spark:nth-child(3) {
+            animation:
+                spark-radius 2.05s 1s both,
+                spark-three-motion 2.03s 1s both;
+        }
+
+        @keyframes spark-three-motion {
+            0% {
+                transform: translate(50%, 100%) rotate(-40deg) translateX(0%);
+                animation-timing-function: cubic-bezier(0.62, 0.56, 1, 0.54)
+            }
+
+            30% {
+                transform: translate(40%, 70%) rotate(20deg) translateX(20%);
+                animation-timing-function: cubic-bezier(0, 0.21, 0.88, 0.46)
+            }
+
+            40% {
+                transform: translate(65%, 20%) rotate(-50deg) translateX(15%);
+                animation-timing-function: cubic-bezier(0, 0.24, 1, 0.62)
+            }
+
+            60% {
+                transform: translate(60%, -40%) rotate(-50deg) translateX(20%);
+                animation-timing-function: cubic-bezier(0, 0.24, 1, 0.62)
+            }
+
+            70% {
+                transform: translate(70%, -0%) rotate(-180deg) translateX(20%);
+                animation-timing-function: cubic-bezier(0.15, 0.48, 0.76, 0.26)
+            }
+
+            100% {
+                transform: translate(70%, -0%) rotate(-360deg) translateX(0%) rotate(180deg) translateX(20%);
+            }
+        }
+
+        .burst {
+            stroke-width: 3;
+        }
+
+        .burst :nth-child(2n) {
+            color: #ff783e
+        }
+
+        .burst :nth-child(3n) {
+            color: #ffab00
+        }
+
+        .burst :nth-child(4n) {
+            color: #55e214
+        }
+
+        .burst :nth-child(5n) {
+            color: #82d9f5
+        }
+
+        .circle {
+            r: 6;
+        }
+
+        .rect {
+            width: 10px;
+            height: 10px;
+        }
+
+        .triangle {
+            d: path("M0,-6 L7,6 L-7,6 Z");
+            stroke-linejoin: round;
+        }
+
+        .plus {
+            d: path("M0,-5 L0,5 M-5,0L 5,0");
+            stroke-linecap: round;
+        }
+
+        .burst:nth-child(4) {
+            transform: translate(30px, 100%) rotate(150deg);
+        }
+
+        .burst:nth-child(5) {
+            transform: translate(50%, 0%) rotate(-20deg);
+        }
+
+        .burst:nth-child(6) {
+            transform: translate(100%, 50%) rotate(75deg);
+        }
+
+        .burst * {}
+
+        @keyframes particle-fade {
+
+            0%,
+            100% {
+                opacity: 0
+            }
+
+            5%,
+            80% {
+                opacity: 1
+            }
+        }
+
+        .burst :nth-child(1) {
+            animation: particle-fade 600ms 2.95s both, particle-one-move 600ms 2.95s both;
+        }
+
+        .burst :nth-child(2) {
+            animation: particle-fade 600ms 2.95s both, particle-two-move 600ms 2.95s both;
+        }
+
+        .burst :nth-child(3) {
+            animation: particle-fade 600ms 2.95s both, particle-three-move 600ms 2.95s both;
+        }
+
+        .burst :nth-child(4) {
+            animation: particle-fade 600ms 2.95s both, particle-four-move 600ms 2.95s both;
+        }
+
+        .burst :nth-child(5) {
+            animation: particle-fade 600ms 2.95s both, particle-five-move 600ms 2.95s both;
+        }
+
+        .burst :nth-child(6) {
+            animation: particle-fade 600ms 2.95s both, particle-six-move 600ms 2.95s both;
+        }
+
+        @keyframes particle-one-move {
+            0% {
+                transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001)
+            }
+
+            100% {
+                transform: rotate(-20deg) translateX(8%) scale(0.5, 0.5)
+            }
+        }
+
+        @keyframes particle-two-move {
+            0% {
+                transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001)
+            }
+
+            100% {
+                transform: rotate(0deg) translateX(8%) scale(0.5, 0.5)
+            }
+        }
+
+        @keyframes particle-three-move {
+            0% {
+                transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001)
+            }
+
+            100% {
+                transform: rotate(20deg) translateX(8%) scale(0.5, 0.5)
+            }
+        }
+
+        @keyframes particle-four-move {
+            0% {
+                transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001)
+            }
+
+            100% {
+                transform: rotate(-35deg) translateX(12%)
+            }
+        }
+
+        @keyframes particle-five-move {
+            0% {
+                transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001)
+            }
+
+            100% {
+                transform: rotate(0deg) translateX(12%)
+            }
+        }
+
+        @keyframes particle-six-move {
+            0% {
+                transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001)
+            }
+
+            100% {
+                transform: rotate(35deg) translateX(12%)
+            }
+        }
+
+        .bar {
+            width: 100%;
+            height: 100%;
+            ry: 50%;
+            stroke-width: 10;
+            animation: bar-in 900ms 3s both;
+        }
+
+        @keyframes bar-in {
+            0% {
+                stroke-dasharray: 0 180 0 226 0 405 0 0
+            }
+
+            100% {
+                stroke-dasharray: 0 0 181 0 227 0 405 0
+            }
+        }
+
+        .magnifier {
+            animation: magnifier-in 600ms 3.6s both;
+            transform-box: fill-box;
+        }
+
+        @keyframes magnifier-in {
+            0% {
+                transform: translate(20px, 8px) rotate(-45deg) scale(0.01, 0.01);
+            }
+
+            50% {
+                transform: translate(-4px, 8px) rotate(-45deg);
+            }
+
+            100% {
+                transform: translate(0px, 0px) rotate(0deg);
+            }
+        }
+
+        .magnifier .glass {
+            cx: 27;
+            cy: 27;
+            r: 8;
+            stroke-width: 3;
+        }
+
+        .magnifier .handle {
+            x1: 32;
+            y1: 32;
+            x2: 44;
+            y2: 44;
+            stroke-width: 3;
+        }
+
+        #results {
+            display: flex;
+            grid-area: results;
+            justify-content: center;
+            background: hsl(0, 0%, 99%);
+            margin: 0;
+        }
+
+        .button-67 {
+            align-items: center;
+            background: #f5f5fa;
+            border: 0;
+            border-radius: 8px;
+            box-shadow: -10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17;
+            box-sizing: border-box;
+            color: #2a1f62;
+            cursor: pointer;
+            display: flex;
+            font-family: "Montserrat", sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            height: 60px;
+            justify-content: center;
+            line-height: 1.5rem;
+            padding: 15px;
+            position: relative;
+            text-align: left;
+            transition: .2s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: pre;
+            width: max-content;
+            word-break: normal;
+            word-spacing: normal;
+            margin: auto 5px;
+        }
+
+        .button-67:hover {
+            background: #f8f8ff;
+            box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
+        }
+
+        @media (min-width: 768px) {
+            .button-67 {
+                padding: 24px;
+            }
+        }
+
+        .panel {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            height: auto;
+            margin: 30px auto 30px auto;
+            padding: 20px;
+            width: auto;
+        }
+
+        .accordion {
+            text-align: center;
+        }
+
+        .accordion.width {
+            display: flex;
+            width: 600px;
+        }
+
+        .accordion.width .card {
+            flex-direction: row;
+            min-width: min-content;
+        }
+
+        .accordion.width .card .card-header {
+            cursor: pointer;
+            transform: rotate(180deg);
+            writing-mode: vertical-rl;
+            background-color: #f5f5f5;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .card-body {
+            width: 400px;
+        }
+
+        .collapsing.width {
+            transition: width 0.5s ease;
+            height: auto;
+            width: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="search">
+        <svg viewBox="0 0 420 60" xmlns="http://www.w3.org/2000/svg">
+            <rect class="bar" />
+
+            <g class="magnifier">
+                <circle class="glass" />
+                <line class="handle" x1="32" y1="32" x2="44" y2="44"></line>
+            </g>
+
+            <g class="sparks">
+                <circle class="spark" />
+                <circle class="spark" />
+                <circle class="spark" />
+            </g>
+
+            <g class="burst pattern-one">
+                <circle class="particle circle" />
+                <path class="particle triangle" />
+                <circle class="particle circle" />
+                <path class="particle plus" />
+                <rect class="particle rect" />
+                <path class="particle triangle" />
+            </g>
+            <g class="burst pattern-two">
+                <path class="particle plus" />
+                <circle class="particle circle" />
+                <path class="particle triangle" />
+                <rect class="particle rect" />
+                <circle class="particle circle" />
+                <path class="particle plus" />
+            </g>
+            <g class="burst pattern-three">
+                <circle class="particle circle" />
+                <rect class="particle rect" />
+                <path class="particle plus" />
+                <path class="particle triangle" />
+                <rect class="particle rect" />
+                <path class="particle plus" />
+            </g>
+        </svg>
+        <input type=search name=q aria-label="Search for inspiration" />
+    </div>
+
+    <div id="results">
+        <div style="display:flex; justify-content: center;">
+            <button class="button-67" role="button" id="pre-award">Pre Award</button>
+            <button class="button-67" role="button" id="award-mgmt">Award Management</button>
+            <button class="button-67" role="button" id="finance">Finance</button>
+            <button class="button-67" role="button" id="recruitment">Recruitment</button>
+            <button class="button-67" role="button" id="onboarding">Onboarding</button>
+            <button class="button-67" role="button" id="hr-transact">HR Transactions</button>
+            <button class="button-67" role="button" id="ecrt">ECRT</button>
+        </div>
+    </div>
+    <div style="margin-bottom: 30px;">
+        <div class="panel" id="pre-award-cont" style="display:none;">
+            <div style="margin-bottom:40px;">
+                <h4>Jane Doe</h4>
+                <p style="font-size:18px;">Director of Pre Award</p>
+                <a href="#" class="card-link"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+                    </svg></a>
+                <a href="#" class="card-link"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="accordion width" id="accordionHorizontalExample">
+
+                <!-- Accordion group creating-->
+                <div class="card">
+                    <div class="card-header" data-toggle="collapse" data-target="#collapseOne">
+                        Award Setup
+                    </div>
+                    <div id="collapseOne" class="collapse show width" data-parent="#accordionHorizontalExample">
+                        <div class="card-body">
+                            <p style="text-align:left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Enim sed faucibus turpis in eu mi. Odio ut sem nulla
+                                pharetra diam. Neque vitae tempus quam pellentesque nec nam aliquam sem et. Velit ut
+                                tortor pretium viverra suspendisse potenti nullam ac. Eget nullam non nisi est sit amet
+                                facilisis. Arcu ac tortor dignissim convallis. Egestas dui id ornare arcu. Adipiscing
+                                commodo elit at imperdiet. Aliquam sem et tortor consequat id porta. Ac odio tempor orci
+                                dapibus ultrices. Magna sit amet purus gravida quis blandit turpis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" data-toggle="collapse" data-target="#collapseTwo">
+                        Budget Proposal
+                    </div>
+                    <div id="collapseTwo" class="collapse width" data-parent="#accordionHorizontalExample">
+                        <div class="card-body">
+                            <p style="text-align:left;">Integer eget aliquet nibh praesent tristique magna. Bibendum arcu vitae elementum
+                                curabitur vitae nunc sed velit. Velit laoreet id donec ultrices tincidunt arcu non.
+                                Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Integer feugiat
+                                scelerisque varius morbi enim nunc faucibus a. Faucibus et molestie ac feugiat sed
+                                lectus vestibulum mattis ullamcorper. Et ultrices neque ornare aenean euismod. Cursus
+                                risus at ultrices mi tempus. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper
+                                sit. Viverra tellus in hac habitasse platea dictumst vestibulum. Risus pretium quam
+                                vulputate dignissim suspendisse in. Posuere lorem ipsum dolor sit amet consectetur
+                                adipiscing elit. Ipsum consequat nisl vel pretium lectus quam id. Metus dictum at tempor
+                                commodo ullamcorper. Pellentesque nec nam aliquam sem et tortor. Mattis rhoncus urna
+                                neque viverra. Lectus magna fringilla urna porttitor rhoncus dolor purus non enim.
+                                Laoreet sit amet cursus sit amet dictum sit amet. Eget lorem dolor sed viverra ipsum
+                                nunc aliquet bibendum. Amet mauris commodo quis imperdiet massa.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" data-toggle="collapse" data-target="#collapseThree">
+                            Contracts
+                        </div>
+                        <div id="collapseThree" class="collapse width" data-parent="#accordionHorizontalExample">
+                            <div class="card-body">
+                                <p style="text-align:left;">Etiam erat velit scelerisque in dictum non consectetur a erat. Diam vulputate ut
+                                    pharetra sit amet aliquam id diam. Non blandit massa enim nec. In dictum non
+                                    consectetur a erat. Turpis massa sed elementum tempus egestas. Amet purus gravida
+                                    quis blandit turpis cursus in hac. In cursus turpis massa tincidunt dui. Nibh
+                                    venenatis cras sed felis eget velit aliquet. Neque aliquam vestibulum morbi blandit.
+                                    Rhoncus est pellentesque elit ullamcorper.</p>
+                                <p style="text-align:left;">Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus.
+                                    Facilisis volutpat est velit egestas dui id. Ornare suspendisse sed nisi lacus sed
+                                    viverra. Ut diam quam nulla porttitor massa id neque aliquam. Sed risus pretium quam
+                                    vulputate dignissim suspendisse in. Tincidunt augue interdum velit euismod. Mauris
+                                    pellentesque pulvinar pellentesque habitant. Est lorem ipsum dolor sit amet
+                                    consectetur adipiscing elit. A cras semper auctor neque. Eu ultrices vitae auctor eu
+                                    augue ut. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel" id="award-mgmt-cont" style="display:none;">
+            <div style="margin-bottom:40px;">
+                <h4>Jane Doe</h4>
+                <p style="font-size:18px;">Director of Award Management</p>
+                <a href="#" class="card-link"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+                    </svg></a>
+                <a href="#" class="card-link"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="accordion width" id="accordionHorizontalExample">
+
+                <!-- Accordion group creating-->
+                <div class="card">
+                    <div class="card-header" data-toggle="collapse" data-target="#collapseFour">
+                        Budget Adjustments
+                    </div>
+                    <div id="collapseFour" class="collapse show width" data-parent="#accordionHorizontalExample">
+                        <div class="card-body">
+                            <p style="text-align:left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Enim sed faucibus turpis in eu mi. Odio ut sem nulla
+                                pharetra diam. Neque vitae tempus quam pellentesque nec nam aliquam sem et. Velit ut
+                                tortor pretium viverra suspendisse potenti nullam ac. Eget nullam non nisi est sit amet
+                                facilisis. Arcu ac tortor dignissim convallis. Egestas dui id ornare arcu. Adipiscing
+                                commodo elit at imperdiet. Aliquam sem et tortor consequat id porta. Ac odio tempor orci
+                                dapibus ultrices. Magna sit amet purus gravida quis blandit turpis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" data-toggle="collapse" data-target="#collapseFive">
+                        Non-Payroll Cost Transfers
+                    </div>
+                    <div id="collapseFive" class="collapse width" data-parent="#accordionHorizontalExample">
+                        <div class="card-body">
+                            <p style="text-align:left;">Integer eget aliquet nibh praesent tristique magna. Bibendum arcu vitae elementum
+                                curabitur vitae nunc sed velit. Velit laoreet id donec ultrices tincidunt arcu non.
+                                Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Integer feugiat
+                                scelerisque varius morbi enim nunc faucibus a. Faucibus et molestie ac feugiat sed
+                                lectus vestibulum mattis ullamcorper. Et ultrices neque ornare aenean euismod. Cursus
+                                risus at ultrices mi tempus. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper
+                                sit. Viverra tellus in hac habitasse platea dictumst vestibulum. Risus pretium quam
+                                vulputate dignissim suspendisse in. Posuere lorem ipsum dolor sit amet consectetur
+                                adipiscing elit. Ipsum consequat nisl vel pretium lectus quam id. Metus dictum at tempor
+                                commodo ullamcorper. Pellentesque nec nam aliquam sem et tortor. Mattis rhoncus urna
+                                neque viverra. Lectus magna fringilla urna porttitor rhoncus dolor purus non enim.
+                                Laoreet sit amet cursus sit amet dictum sit amet. Eget lorem dolor sed viverra ipsum
+                                nunc aliquet bibendum. Amet mauris commodo quis imperdiet massa.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" data-toggle="collapse" data-target="#collapseSix">
+                            Payroll Cost Transfers
+                        </div>
+                        <div id="collapseSix" class="collapse width" data-parent="#accordionHorizontalExample">
+                            <div class="card-body">
+                                <p style="text-align:left;">Etiam erat velit scelerisque in dictum non consectetur a erat. Diam vulputate ut
+                                    pharetra sit amet aliquam id diam. Non blandit massa enim nec. In dictum non
+                                    consectetur a erat. Turpis massa sed elementum tempus egestas. Amet purus gravida
+                                    quis blandit turpis cursus in hac. In cursus turpis massa tincidunt dui. Nibh
+                                    venenatis cras sed felis eget velit aliquet. Neque aliquam vestibulum morbi blandit.
+                                    Rhoncus est pellentesque elit ullamcorper.</p>
+                                <p style="text-align:left;">Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus.
+                                    Facilisis volutpat est velit egestas dui id. Ornare suspendisse sed nisi lacus sed
+                                    viverra. Ut diam quam nulla porttitor massa id neque aliquam. Sed risus pretium quam
+                                    vulputate dignissim suspendisse in. Tincidunt augue interdum velit euismod. Mauris
+                                    pellentesque pulvinar pellentesque habitant. Est lorem ipsum dolor sit amet
+                                    consectetur adipiscing elit. A cras semper auctor neque. Eu ultrices vitae auctor eu
+                                    augue ut. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" data-toggle="collapse" data-target="#collapseSeven">
+                            No Cost Extensions
+                        </div>
+                        <div id="collapseSeven" class="collapse width" data-parent="#accordionHorizontalExample">
+                            <div class="card-body">
+                                <p style="text-align:left;">Etiam erat velit scelerisque in dictum non consectetur a erat. Diam vulputate ut
+                                    pharetra sit amet aliquam id diam. Non blandit massa enim nec. In dictum non
+                                    consectetur a erat. Turpis massa sed elementum tempus egestas. Amet purus gravida
+                                    quis blandit turpis cursus in hac. In cursus turpis massa tincidunt dui. Nibh
+                                    venenatis cras sed felis eget velit aliquet. Neque aliquam vestibulum morbi blandit.
+                                    Rhoncus est pellentesque elit ullamcorper.</p>
+                                <p style="text-align:left;">Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus.
+                                    Facilisis volutpat est velit egestas dui id. Ornare suspendisse sed nisi lacus sed
+                                    viverra. Ut diam quam nulla porttitor massa id neque aliquam. Sed risus pretium quam
+                                    vulputate dignissim suspendisse in. Tincidunt augue interdum velit euismod. Mauris
+                                    pellentesque pulvinar pellentesque habitant. Est lorem ipsum dolor sit amet
+                                    consectetur adipiscing elit. A cras semper auctor neque. Eu ultrices vitae auctor eu
+                                    augue ut. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" data-toggle="collapse" data-target="#collapseEight">
+                            Provisional Requests
+                        </div>
+                        <div id="collapseEight" class="collapse width" data-parent="#accordionHorizontalExample">
+                            <div class="card-body">
+                                <p style="text-align:left;">Etiam erat velit scelerisque in dictum non consectetur a erat. Diam vulputate ut
+                                    pharetra sit amet aliquam id diam. Non blandit massa enim nec. In dictum non
+                                    consectetur a erat. Turpis massa sed elementum tempus egestas. Amet purus gravida
+                                    quis blandit turpis cursus in hac. In cursus turpis massa tincidunt dui. Nibh
+                                    venenatis cras sed felis eget velit aliquet. Neque aliquam vestibulum morbi blandit.
+                                    Rhoncus est pellentesque elit ullamcorper.</p>
+                                <p style="text-align:left;">Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus.
+                                    Facilisis volutpat est velit egestas dui id. Ornare suspendisse sed nisi lacus sed
+                                    viverra. Ut diam quam nulla porttitor massa id neque aliquam. Sed risus pretium quam
+                                    vulputate dignissim suspendisse in. Tincidunt augue interdum velit euismod. Mauris
+                                    pellentesque pulvinar pellentesque habitant. Est lorem ipsum dolor sit amet
+                                    consectetur adipiscing elit. A cras semper auctor neque. Eu ultrices vitae auctor eu
+                                    augue ut. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" data-toggle="collapse" data-target="#collapseNine">
+                            Budget Reporting
+                        </div>
+                        <div id="collapseNine" class="collapse width" data-parent="#accordionHorizontalExample">
+                            <div class="card-body">
+                                <p style="text-align:left;">Etiam erat velit scelerisque in dictum non consectetur a erat. Diam vulputate ut
+                                    pharetra sit amet aliquam id diam. Non blandit massa enim nec. In dictum non
+                                    consectetur a erat. Turpis massa sed elementum tempus egestas. Amet purus gravida
+                                    quis blandit turpis cursus in hac. In cursus turpis massa tincidunt dui. Nibh
+                                    venenatis cras sed felis eget velit aliquet. Neque aliquam vestibulum morbi blandit.
+                                    Rhoncus est pellentesque elit ullamcorper.</p>
+                                <p style="text-align:left;">Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus.
+                                    Facilisis volutpat est velit egestas dui id. Ornare suspendisse sed nisi lacus sed
+                                    viverra. Ut diam quam nulla porttitor massa id neque aliquam. Sed risus pretium quam
+                                    vulputate dignissim suspendisse in. Tincidunt augue interdum velit euismod. Mauris
+                                    pellentesque pulvinar pellentesque habitant. Est lorem ipsum dolor sit amet
+                                    consectetur adipiscing elit. A cras semper auctor neque. Eu ultrices vitae auctor eu
+                                    augue ut. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" data-toggle="collapse" data-target="#collapseTen">
+                            Payroll Review
+                        </div>
+                        <div id="collapseTen" class="collapse width" data-parent="#accordionHorizontalExample">
+                            <div class="card-body">
+                                <p style="text-align:left;">Etiam erat velit scelerisque in dictum non consectetur a erat. Diam vulputate ut
+                                    pharetra sit amet aliquam id diam. Non blandit massa enim nec. In dictum non
+                                    consectetur a erat. Turpis massa sed elementum tempus egestas. Amet purus gravida
+                                    quis blandit turpis cursus in hac. In cursus turpis massa tincidunt dui. Nibh
+                                    venenatis cras sed felis eget velit aliquet. Neque aliquam vestibulum morbi blandit.
+                                    Rhoncus est pellentesque elit ullamcorper.</p>
+                                <p style="text-align:left;">Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus.
+                                    Facilisis volutpat est velit egestas dui id. Ornare suspendisse sed nisi lacus sed
+                                    viverra. Ut diam quam nulla porttitor massa id neque aliquam. Sed risus pretium quam
+                                    vulputate dignissim suspendisse in. Tincidunt augue interdum velit euismod. Mauris
+                                    pellentesque pulvinar pellentesque habitant. Est lorem ipsum dolor sit amet
+                                    consectetur adipiscing elit. A cras semper auctor neque. Eu ultrices vitae auctor eu
+                                    augue ut. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" data-toggle="collapse" data-target="#collapseEleven">
+                            Participant Payments
+                        </div>
+                        <div id="collapseEleven" class="collapse width" data-parent="#accordionHorizontalExample">
+                            <div class="card-body">
+                                <p style="text-align:left;">Etiam erat velit scelerisque in dictum non consectetur a erat. Diam vulputate ut
+                                    pharetra sit amet aliquam id diam. Non blandit massa enim nec. In dictum non
+                                    consectetur a erat. Turpis massa sed elementum tempus egestas. Amet purus gravida
+                                    quis blandit turpis cursus in hac. In cursus turpis massa tincidunt dui. Nibh
+                                    venenatis cras sed felis eget velit aliquet. Neque aliquam vestibulum morbi blandit.
+                                    Rhoncus est pellentesque elit ullamcorper.</p>
+                                <p style="text-align:left;">Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus.
+                                    Facilisis volutpat est velit egestas dui id. Ornare suspendisse sed nisi lacus sed
+                                    viverra. Ut diam quam nulla porttitor massa id neque aliquam. Sed risus pretium quam
+                                    vulputate dignissim suspendisse in. Tincidunt augue interdum velit euismod. Mauris
+                                    pellentesque pulvinar pellentesque habitant. Est lorem ipsum dolor sit amet
+                                    consectetur adipiscing elit. A cras semper auctor neque. Eu ultrices vitae auctor eu
+                                    augue ut. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" data-toggle="collapse" data-target="#collapseTwelve">
+                            Subaward Monitoring
+                        </div>
+                        <div id="collapseTwelve" class="collapse width" data-parent="#accordionHorizontalExample">
+                            <div class="card-body">
+                                <p style="text-align:left;">Etiam erat velit scelerisque in dictum non consectetur a erat. Diam vulputate ut
+                                    pharetra sit amet aliquam id diam. Non blandit massa enim nec. In dictum non
+                                    consectetur a erat. Turpis massa sed elementum tempus egestas. Amet purus gravida
+                                    quis blandit turpis cursus in hac. In cursus turpis massa tincidunt dui. Nibh
+                                    venenatis cras sed felis eget velit aliquet. Neque aliquam vestibulum morbi blandit.
+                                    Rhoncus est pellentesque elit ullamcorper.</p>
+                                <p style="text-align:left;">Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus.
+                                    Facilisis volutpat est velit egestas dui id. Ornare suspendisse sed nisi lacus sed
+                                    viverra. Ut diam quam nulla porttitor massa id neque aliquam. Sed risus pretium quam
+                                    vulputate dignissim suspendisse in. Tincidunt augue interdum velit euismod. Mauris
+                                    pellentesque pulvinar pellentesque habitant. Est lorem ipsum dolor sit amet
+                                    consectetur adipiscing elit. A cras semper auctor neque. Eu ultrices vitae auctor eu
+                                    augue ut. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" data-toggle="collapse" data-target="#collapseThirteen">
+                            Business Service Agreements
+                        </div>
+                        <div id="collapseThirteen" class="collapse width" data-parent="#accordionHorizontalExample">
+                            <div class="card-body">
+                                <p style="text-align:left;">Etiam erat velit scelerisque in dictum non consectetur a erat. Diam vulputate ut
+                                    pharetra sit amet aliquam id diam. Non blandit massa enim nec. In dictum non
+                                    consectetur a erat. Turpis massa sed elementum tempus egestas. Amet purus gravida
+                                    quis blandit turpis cursus in hac. In cursus turpis massa tincidunt dui. Nibh
+                                    venenatis cras sed felis eget velit aliquet. Neque aliquam vestibulum morbi blandit.
+                                    Rhoncus est pellentesque elit ullamcorper.</p>
+                                <p style="text-align:left;">Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus.
+                                    Facilisis volutpat est velit egestas dui id. Ornare suspendisse sed nisi lacus sed
+                                    viverra. Ut diam quam nulla porttitor massa id neque aliquam. Sed risus pretium quam
+                                    vulputate dignissim suspendisse in. Tincidunt augue interdum velit euismod. Mauris
+                                    pellentesque pulvinar pellentesque habitant. Est lorem ipsum dolor sit amet
+                                    consectetur adipiscing elit. A cras semper auctor neque. Eu ultrices vitae auctor eu
+                                    augue ut. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" data-toggle="collapse" data-target="#collapseFourteen">
+                            Summer Salary
+                        </div>
+                        <div id="collapseFourteen" class="collapse width" data-parent="#accordionHorizontalExample">
+                            <div class="card-body">
+                                <p style="text-align:left;">Etiam erat velit scelerisque in dictum non consectetur a erat. Diam vulputate ut
+                                    pharetra sit amet aliquam id diam. Non blandit massa enim nec. In dictum non
+                                    consectetur a erat. Turpis massa sed elementum tempus egestas. Amet purus gravida
+                                    quis blandit turpis cursus in hac. In cursus turpis massa tincidunt dui. Nibh
+                                    venenatis cras sed felis eget velit aliquet. Neque aliquam vestibulum morbi blandit.
+                                    Rhoncus est pellentesque elit ullamcorper.</p>
+                                <p style="text-align:left;">Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus.
+                                    Facilisis volutpat est velit egestas dui id. Ornare suspendisse sed nisi lacus sed
+                                    viverra. Ut diam quam nulla porttitor massa id neque aliquam. Sed risus pretium quam
+                                    vulputate dignissim suspendisse in. Tincidunt augue interdum velit euismod. Mauris
+                                    pellentesque pulvinar pellentesque habitant. Est lorem ipsum dolor sit amet
+                                    consectetur adipiscing elit. A cras semper auctor neque. Eu ultrices vitae auctor eu
+                                    augue ut. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" data-toggle="collapse" data-target="#collapseFifteen">
+                            Salary Release
+                        </div>
+                        <div id="collapseFifteen" class="collapse width" data-parent="#accordionHorizontalExample">
+                            <div class="card-body">
+                                <p style="text-align:left;">Etiam erat velit scelerisque in dictum non consectetur a erat. Diam vulputate ut
+                                    pharetra sit amet aliquam id diam. Non blandit massa enim nec. In dictum non
+                                    consectetur a erat. Turpis massa sed elementum tempus egestas. Amet purus gravida
+                                    quis blandit turpis cursus in hac. In cursus turpis massa tincidunt dui. Nibh
+                                    venenatis cras sed felis eget velit aliquet. Neque aliquam vestibulum morbi blandit.
+                                    Rhoncus est pellentesque elit ullamcorper.</p>
+                                <p style="text-align:left;">Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus.
+                                    Facilisis volutpat est velit egestas dui id. Ornare suspendisse sed nisi lacus sed
+                                    viverra. Ut diam quam nulla porttitor massa id neque aliquam. Sed risus pretium quam
+                                    vulputate dignissim suspendisse in. Tincidunt augue interdum velit euismod. Mauris
+                                    pellentesque pulvinar pellentesque habitant. Est lorem ipsum dolor sit amet
+                                    consectetur adipiscing elit. A cras semper auctor neque. Eu ultrices vitae auctor eu
+                                    augue ut. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel" id="finance-cont" style="display:none;">
+            <div style="margin-bottom:40px;">
+                <h4>Jane Doe</h4>
+                <p style="font-size:18px;">Director of Finance</p>
+                <a href="#" class="card-link"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+                    </svg></a>
+                <a href="#" class="card-link"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="accordion width" id="accordionHorizontalExample">
+
+                <!-- Accordion group creating-->
+                <div class="card">
+                    <div class="card-header" data-toggle="collapse" data-target="#collapseSixteen">
+                        Services
+                    </div>
+                    <div id="collapseSixteen" class="collapse show width" data-parent="#accordionHorizontalExample">
+                        <div class="card-body" style="display:flex; justify-content:center;">
+                            <a href="https://services.ku.edu/TDClient/631/Portal/Home/" target="_blank"><button
+                                    class="button-67">SSC Finance Services</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" data-toggle="collapse" data-target="#collapseSeventeen">
+                        Tickets
+                    </div>
+                    <div id="collapseSeventeen" class="collapse width" data-parent="#accordionHorizontalExample">
+                        <div class="card-body" style="text-align:left;">
+                            <ul>
+                                <li>Submit P-card Receipt</li>
+                                <li>Request Travel Request (TR) or Travel Expense Reimbursement (TER)</li>
+                                <li>Submit an invoice for payment <strong>(non-travel)</strong></li>
+                                <li>Independent Contractor Payment Request - <i>This process replaces the need for an
+                                        Invoice Payment Form and Independent Contractor Decision Tree</i></li>
+                                <li>Modify existing order</li>
+                                <li>Non-Catalog Purchase Order Requests <i>(non-tech & less than $10K OR w/pre-approval
+                                        from Procurement/KU IT; research funding purchases over $10K should continue to
+                                        go through appropriate SSC or Research Center contact)</i></li>
+                                <li>Bill for goods/services provided by unit/dept</li>
+                                <li>Submit sponsorships, scholarships, or student award</li>
+                                <li>Submit Journal Request Change (JRC)</li>
+                                <li>Submit Miscellaneous Deposit Form</li>
+                                <li>Inquire about Fund Utilization</li>
+                                <li>Something Else</li>
+                            </ul>
+                            <div style="display:flex;justify-content:center;">
+                                <a href="https://services.ku.edu/TDClient/631/Portal/Requests/TicketRequests/NewForm?ID=I-
+                                opepJvknI_&amp;RequestorType=Service" target="_blank">
+                                    <button class="button-67">SSC TDX Portal</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel" id="recruitment-cont" style="display:none;">
+            <div style="margin-bottom:40px;">
+                <h4>Jane Doe</h4>
+                <p style="font-size:18px;">Director of Recruitment</p>
+                <a href="#" class="card-link"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+                    </svg></a>
+                <a href="#" class="card-link"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="accordion width" id="accordionHorizontalExample">
+
+                <!-- Accordion group creating-->
+                <div class="card">
+                    <div class="card-header" data-toggle="collapse" data-target="#collapseEighteen">
+                        Recruitment Setup
+                    </div>
+                    <div id="collapseEighteen" class="collapse show width" data-parent="#accordionHorizontalExample">
+                        <div class="card-body">
+                            <p style="text-align:left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Enim sed faucibus turpis in eu mi. Odio ut sem nulla
+                                pharetra diam. Neque vitae tempus quam pellentesque nec nam aliquam sem et. Velit ut
+                                tortor pretium viverra suspendisse potenti nullam ac. Eget nullam non nisi est sit amet
+                                facilisis. Arcu ac tortor dignissim convallis. Egestas dui id ornare arcu. Adipiscing
+                                commodo elit at imperdiet. Aliquam sem et tortor consequat id porta. Ac odio tempor orci
+                                dapibus ultrices. Magna sit amet purus gravida quis blandit turpis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" data-toggle="collapse" data-target="#collapseNineteen">
+                        Recruitment Proposal
+                    </div>
+                    <div id="collapseNineteen" class="collapse width" data-parent="#accordionHorizontalExample">
+                        <div class="card-body">
+                            <p style="text-align:left;">Integer eget aliquet nibh praesent tristique magna. Bibendum arcu vitae elementum
+                                curabitur vitae nunc sed velit. Velit laoreet id donec ultrices tincidunt arcu non.
+                                Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Integer feugiat
+                                scelerisque varius morbi enim nunc faucibus a. Faucibus et molestie ac feugiat sed
+                                lectus vestibulum mattis ullamcorper. Et ultrices neque ornare aenean euismod. Cursus
+                                risus at ultrices mi tempus. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper
+                                sit. Viverra tellus in hac habitasse platea dictumst vestibulum. Risus pretium quam
+                                vulputate dignissim suspendisse in. Posuere lorem ipsum dolor sit amet consectetur
+                                adipiscing elit. Ipsum consequat nisl vel pretium lectus quam id. Metus dictum at tempor
+                                commodo ullamcorper. Pellentesque nec nam aliquam sem et tortor. Mattis rhoncus urna
+                                neque viverra. Lectus magna fringilla urna porttitor rhoncus dolor purus non enim.
+                                Laoreet sit amet cursus sit amet dictum sit amet. Eget lorem dolor sed viverra ipsum
+                                nunc aliquet bibendum. Amet mauris commodo quis imperdiet massa.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" data-toggle="collapse" data-target="#collapseTwenty">
+                            Recruitment Contracts
+                        </div>
+                        <div id="collapseTwenty" class="collapse width" data-parent="#accordionHorizontalExample">
+                            <div class="card-body">
+                                <p style="text-align:left;">Etiam erat velit scelerisque in dictum non consectetur a erat. Diam vulputate ut
+                                    pharetra sit amet aliquam id diam. Non blandit massa enim nec. In dictum non
+                                    consectetur a erat. Turpis massa sed elementum tempus egestas. Amet purus gravida
+                                    quis blandit turpis cursus in hac. In cursus turpis massa tincidunt dui. Nibh
+                                    venenatis cras sed felis eget velit aliquet. Neque aliquam vestibulum morbi blandit.
+                                    Rhoncus est pellentesque elit ullamcorper.</p>
+                                <p style="text-align:left;">Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus.
+                                    Facilisis volutpat est velit egestas dui id. Ornare suspendisse sed nisi lacus sed
+                                    viverra. Ut diam quam nulla porttitor massa id neque aliquam. Sed risus pretium quam
+                                    vulputate dignissim suspendisse in. Tincidunt augue interdum velit euismod. Mauris
+                                    pellentesque pulvinar pellentesque habitant. Est lorem ipsum dolor sit amet
+                                    consectetur adipiscing elit. A cras semper auctor neque. Eu ultrices vitae auctor eu
+                                    augue ut. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel" id="onboarding-cont" style="display:none;">
+            <div style="margin-bottom:40px;">
+                <h4>Jane Doe</h4>
+                <p style="font-size:18px;">Director of Onboarding</p>
+                <a href="#" class="card-link"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+                    </svg></a>
+                <a href="#" class="card-link"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="accordion width" id="accordionHorizontalExample">
+
+                <!-- Accordion group creating-->
+                <div class="card">
+                    <div class="card-header" data-toggle="collapse" data-target="#collapseTwentyOne">
+                        Onboarding Setup
+                    </div>
+                    <div id="collapseTwentyOne" class="collapse show width" data-parent="#accordionHorizontalExample">
+                        <div class="card-body">
+                            <p style="text-align:left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Enim sed faucibus turpis in eu mi. Odio ut sem nulla
+                                pharetra diam. Neque vitae tempus quam pellentesque nec nam aliquam sem et. Velit ut
+                                tortor pretium viverra suspendisse potenti nullam ac. Eget nullam non nisi est sit amet
+                                facilisis. Arcu ac tortor dignissim convallis. Egestas dui id ornare arcu. Adipiscing
+                                commodo elit at imperdiet. Aliquam sem et tortor consequat id porta. Ac odio tempor orci
+                                dapibus ultrices. Magna sit amet purus gravida quis blandit turpis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" data-toggle="collapse" data-target="#collapseTwentyTwo">
+                        Onboarding Proposal
+                    </div>
+                    <div id="collapseTwentyTwo" class="collapse width" data-parent="#accordionHorizontalExample">
+                        <div class="card-body">
+                            <p style="text-align:left;">Integer eget aliquet nibh praesent tristique magna. Bibendum arcu vitae elementum
+                                curabitur vitae nunc sed velit. Velit laoreet id donec ultrices tincidunt arcu non.
+                                Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Integer feugiat
+                                scelerisque varius morbi enim nunc faucibus a. Faucibus et molestie ac feugiat sed
+                                lectus vestibulum mattis ullamcorper. Et ultrices neque ornare aenean euismod. Cursus
+                                risus at ultrices mi tempus. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper
+                                sit. Viverra tellus in hac habitasse platea dictumst vestibulum. Risus pretium quam
+                                vulputate dignissim suspendisse in. Posuere lorem ipsum dolor sit amet consectetur
+                                adipiscing elit. Ipsum consequat nisl vel pretium lectus quam id. Metus dictum at tempor
+                                commodo ullamcorper. Pellentesque nec nam aliquam sem et tortor. Mattis rhoncus urna
+                                neque viverra. Lectus magna fringilla urna porttitor rhoncus dolor purus non enim.
+                                Laoreet sit amet cursus sit amet dictum sit amet. Eget lorem dolor sed viverra ipsum
+                                nunc aliquet bibendum. Amet mauris commodo quis imperdiet massa.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" data-toggle="collapse" data-target="#collapseTwentyThree">
+                            Onboarding Contracts
+                        </div>
+                        <div id="collapseTwentyThree" class="collapse width" data-parent="#accordionHorizontalExample">
+                            <div class="card-body">
+                                <p style="text-align:left;">Etiam erat velit scelerisque in dictum non consectetur a erat. Diam vulputate ut
+                                    pharetra sit amet aliquam id diam. Non blandit massa enim nec. In dictum non
+                                    consectetur a erat. Turpis massa sed elementum tempus egestas. Amet purus gravida
+                                    quis blandit turpis cursus in hac. In cursus turpis massa tincidunt dui. Nibh
+                                    venenatis cras sed felis eget velit aliquet. Neque aliquam vestibulum morbi blandit.
+                                    Rhoncus est pellentesque elit ullamcorper.</p>
+                                <p style="text-align:left;">Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus.
+                                    Facilisis volutpat est velit egestas dui id. Ornare suspendisse sed nisi lacus sed
+                                    viverra. Ut diam quam nulla porttitor massa id neque aliquam. Sed risus pretium quam
+                                    vulputate dignissim suspendisse in. Tincidunt augue interdum velit euismod. Mauris
+                                    pellentesque pulvinar pellentesque habitant. Est lorem ipsum dolor sit amet
+                                    consectetur adipiscing elit. A cras semper auctor neque. Eu ultrices vitae auctor eu
+                                    augue ut. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel" id="hr-transact-cont" style="display:none;">
+            <div style="margin-bottom:40px;">
+                <h4>Jane Doe</h4>
+                <p style="font-size:18px;">Director of HR Transactions</p>
+                <a href="#" class="card-link"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+                    </svg></a>
+                <a href="#" class="card-link"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="accordion width" id="accordionHorizontalExample">
+
+                <!-- Accordion group creating-->
+                <div class="card">
+                    <div class="card-header" data-toggle="collapse" data-target="#collapseTwentyFour">
+                        HR Transaction Setup
+                    </div>
+                    <div id="collapseTwentyFour" class="collapse show width" data-parent="#accordionHorizontalExample">
+                        <div class="card-body">
+                            <p style="text-align:left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Enim sed faucibus turpis in eu mi. Odio ut sem nulla
+                                pharetra diam. Neque vitae tempus quam pellentesque nec nam aliquam sem et. Velit ut
+                                tortor pretium viverra suspendisse potenti nullam ac. Eget nullam non nisi est sit amet
+                                facilisis. Arcu ac tortor dignissim convallis. Egestas dui id ornare arcu. Adipiscing
+                                commodo elit at imperdiet. Aliquam sem et tortor consequat id porta. Ac odio tempor orci
+                                dapibus ultrices. Magna sit amet purus gravida quis blandit turpis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" data-toggle="collapse" data-target="#collapseTwentyFive">
+                        HR Transaction Proposal
+                    </div>
+                    <div id="collapseTwentyFive" class="collapse width" data-parent="#accordionHorizontalExample">
+                        <div class="card-body">
+                            <p style="text-align:left;">Integer eget aliquet nibh praesent tristique magna. Bibendum arcu vitae elementum
+                                curabitur vitae nunc sed velit. Velit laoreet id donec ultrices tincidunt arcu non.
+                                Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Integer feugiat
+                                scelerisque varius morbi enim nunc faucibus a. Faucibus et molestie ac feugiat sed
+                                lectus vestibulum mattis ullamcorper. Et ultrices neque ornare aenean euismod. Cursus
+                                risus at ultrices mi tempus. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper
+                                sit. Viverra tellus in hac habitasse platea dictumst vestibulum. Risus pretium quam
+                                vulputate dignissim suspendisse in. Posuere lorem ipsum dolor sit amet consectetur
+                                adipiscing elit. Ipsum consequat nisl vel pretium lectus quam id. Metus dictum at tempor
+                                commodo ullamcorper. Pellentesque nec nam aliquam sem et tortor. Mattis rhoncus urna
+                                neque viverra. Lectus magna fringilla urna porttitor rhoncus dolor purus non enim.
+                                Laoreet sit amet cursus sit amet dictum sit amet. Eget lorem dolor sed viverra ipsum
+                                nunc aliquet bibendum. Amet mauris commodo quis imperdiet massa.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" data-toggle="collapse" data-target="#collapseTwentySix">
+                            HR Transaction Contracts
+                        </div>
+                        <div id="collapseTwentySix" class="collapse width" data-parent="#accordionHorizontalExample">
+                            <div class="card-body">
+                                <p style="text-align:left;">Etiam erat velit scelerisque in dictum non consectetur a erat. Diam vulputate ut
+                                    pharetra sit amet aliquam id diam. Non blandit massa enim nec. In dictum non
+                                    consectetur a erat. Turpis massa sed elementum tempus egestas. Amet purus gravida
+                                    quis blandit turpis cursus in hac. In cursus turpis massa tincidunt dui. Nibh
+                                    venenatis cras sed felis eget velit aliquet. Neque aliquam vestibulum morbi blandit.
+                                    Rhoncus est pellentesque elit ullamcorper.</p>
+                                <p style="text-align:left;">Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus.
+                                    Facilisis volutpat est velit egestas dui id. Ornare suspendisse sed nisi lacus sed
+                                    viverra. Ut diam quam nulla porttitor massa id neque aliquam. Sed risus pretium quam
+                                    vulputate dignissim suspendisse in. Tincidunt augue interdum velit euismod. Mauris
+                                    pellentesque pulvinar pellentesque habitant. Est lorem ipsum dolor sit amet
+                                    consectetur adipiscing elit. A cras semper auctor neque. Eu ultrices vitae auctor eu
+                                    augue ut. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel" id="ecrt-cont" style="display:none;">
+            <div style="margin-bottom:40px; display:flex; justify-content:space-between;">
+                <div>
+                    <h4>Jane Doe</h4>
+                    <p style="font-size:18px;">Director of ECRT</p>
+                    <a href="#" class="card-link"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+                        </svg></a>
+                    <a href="#" class="card-link"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+                        </svg>
+                    </a>
+                </div>
+                <div>
+                    <p><i>Direct me to more information:</i></p>
+                    <a href="https://research.ku.edu/effort-reporting" target="_blank">
+                        <button class="button-67">Effort Reporting</button>
+                    </a>
+                </div>
+            </div>
+            <div class="accordion width" id="accordionHorizontalExample">
+
+                <!-- Accordion group creating-->
+                <div class="card">
+                    <div class="card-header" data-toggle="collapse" data-target="#collapseTwentySeven">
+                        ECRT Setup
+                    </div>
+                    <div id="collapseTwentySeven" class="collapse show width" data-parent="#accordionHorizontalExample">
+                        <div class="card-body">
+                            <p style="text-align:left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Enim sed faucibus turpis in eu mi. Odio ut sem nulla
+                                pharetra diam. Neque vitae tempus quam pellentesque nec nam aliquam sem et. Velit ut
+                                tortor pretium viverra suspendisse potenti nullam ac. Eget nullam non nisi est sit amet
+                                facilisis. Arcu ac tortor dignissim convallis. Egestas dui id ornare arcu. Adipiscing
+                                commodo elit at imperdiet. Aliquam sem et tortor consequat id porta. Ac odio tempor orci
+                                dapibus ultrices. Magna sit amet purus gravida quis blandit turpis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" data-toggle="collapse" data-target="#collapseTwentyEight">
+                        ECRT Proposal
+                    </div>
+                    <div id="collapseTwentyEight" class="collapse width" data-parent="#accordionHorizontalExample">
+                        <div class="card-body">
+                            <p style="text-align:left;">Integer eget aliquet nibh praesent tristique magna. Bibendum arcu vitae elementum
+                                curabitur vitae nunc sed velit. Velit laoreet id donec ultrices tincidunt arcu non.
+                                Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Integer feugiat
+                                scelerisque varius morbi enim nunc faucibus a. Faucibus et molestie ac feugiat sed
+                                lectus vestibulum mattis ullamcorper. Et ultrices neque ornare aenean euismod. Cursus
+                                risus at ultrices mi tempus. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper
+                                sit. Viverra tellus in hac habitasse platea dictumst vestibulum. Risus pretium quam
+                                vulputate dignissim suspendisse in. Posuere lorem ipsum dolor sit amet consectetur
+                                adipiscing elit. Ipsum consequat nisl vel pretium lectus quam id. Metus dictum at tempor
+                                commodo ullamcorper. Pellentesque nec nam aliquam sem et tortor. Mattis rhoncus urna
+                                neque viverra. Lectus magna fringilla urna porttitor rhoncus dolor purus non enim.
+                                Laoreet sit amet cursus sit amet dictum sit amet. Eget lorem dolor sed viverra ipsum
+                                nunc aliquet bibendum. Amet mauris commodo quis imperdiet massa.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" data-toggle="collapse" data-target="#collapseTwentyNine">
+                            ECRT Contracts
+                        </div>
+                        <div id="collapseTwentyNine" class="collapse width" data-parent="#accordionHorizontalExample">
+                            <div class="card-body">
+                                <p style="text-align:left;">Etiam erat velit scelerisque in dictum non consectetur a erat. Diam vulputate ut
+                                    pharetra sit amet aliquam id diam. Non blandit massa enim nec. In dictum non
+                                    consectetur a erat. Turpis massa sed elementum tempus egestas. Amet purus gravida
+                                    quis blandit turpis cursus in hac. In cursus turpis massa tincidunt dui. Nibh
+                                    venenatis cras sed felis eget velit aliquet. Neque aliquam vestibulum morbi blandit.
+                                    Rhoncus est pellentesque elit ullamcorper.</p>
+                                <p style="text-align:left;">Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus.
+                                    Facilisis volutpat est velit egestas dui id. Ornare suspendisse sed nisi lacus sed
+                                    viverra. Ut diam quam nulla porttitor massa id neque aliquam. Sed risus pretium quam
+                                    vulputate dignissim suspendisse in. Tincidunt augue interdum velit euismod. Mauris
+                                    pellentesque pulvinar pellentesque habitant. Est lorem ipsum dolor sit amet
+                                    consectetur adipiscing elit. A cras semper auctor neque. Eu ultrices vitae auctor eu
+                                    augue ut. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
